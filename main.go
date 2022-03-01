@@ -29,11 +29,23 @@ func main() {
 	// 	fmt.Println(user.FirstName, user.LastName, user.PMI)
 	// }
 
-	meetings, err := zoom.GetMeeting("8722824397")
+	//meetings, err := zoom.GetMeeting("8722824397")
+	//if err != nil {
+	//	log.Println(err)
+	//}
+
+	//fmt.Println(meetings)
+	chats, err := zoom.GetChat("8722824397")
 	if err != nil {
 		log.Println(err)
 	}
-
-	fmt.Println(meetings)
-
+	fmt.Println(chats)
+	//for _, chats := range chats.Chats {
+	//fmt.Println(chats.UserID, chats.UserName, chats.Email)
+	//}
+	meeting, err := zoom.GetClientFeedback("8722824397")
+	if err != nil {
+		log.Println(err)
+	}
+	fmt.Println(meeting)
 }
