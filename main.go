@@ -14,7 +14,7 @@ func main() {
 	zoom := zoom.Zoom{
 		BaseUrl: "https://api.zoom.us/v2",
 		Headers: http.Header{
-			"Authorization": []string{"Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOm51bGwsImlzcyI6IjgtWGZkQW5RVDZlR1FzN2JyMHFoanciLCJleHAiOjE2NDY3MjIwNzIsImlhdCI6MTY0NjExNzI3MH0.KlOE4NfT_U-TI64EoLA_5OJn6aM-3rSH-MS-gNHOBZE"},
+			"Authorization": []string{"Bearer "},
 			"Content-Type":  []string{"application/json"},
 		},
 	}
