@@ -16,9 +16,7 @@ type Meeting struct {
 // Get Specific meeting details
 func (z *Zoom) GetMeeting(meeting_id string) (Meeting, error) {
 	// Create the url for getting meetings
-	endpoint := fmt.Sprintf("%v/meetings/%v", z.BaseUrl, meeting_id)
-	fmt.Println(endpoint)
-
+	endpoint := fmt.Sprintf("/meetings/%v", meeting_id)
 	response, err := z.Request(endpoint, "GET")
 	if err != nil {
 		log.Println(err)
