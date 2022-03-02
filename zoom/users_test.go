@@ -8,28 +8,6 @@ import (
 	"github.com/stretchr/testify/assert"
 )
 
-func TestAddition(t *testing.T) {
-
-	total, err := Addition(10, 20)
-	if err != nil {
-		t.Error(err)
-	}
-
-	assert.NotNil(t, total, "Total returned nil")
-	assert.Equal(t, total, 30, "Results are not matching")
-
-}
-
-func TestAdditionWithoutParameter(t *testing.T) {
-
-	a := 10
-	b := 10.1
-
-	assert.NotZero(t, a, "Not an zero")
-	assert.NotZero(t, b, "Not an zero")
-
-}
-
 func TestGetUser(t *testing.T) {
 
 	testServer := httptest.NewServer(http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {

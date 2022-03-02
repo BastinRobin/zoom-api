@@ -14,7 +14,7 @@ func main() {
 	zoom := zoom.Zoom{
 		BaseUrl: "https://api.zoom.us/v2",
 		Headers: http.Header{
-			"Authorization": []string{"Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOm51bGwsImlzcyI6IjgtWGZkQW5RVDZlR1FzN2JyMHFoanciLCJleHAiOjE2NDYwNjEwMDEsImlhdCI6MTY0NjA1NTYwMX0.IXV9Ub2jeU0v4IkAE1kXMDyHSAf69_2rkhzw3ckFSVk"},
+			"Authorization": []string{"Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOm51bGwsImlzcyI6IjgtWGZkQW5RVDZlR1FzN2JyMHFoanciLCJleHAiOjE2NDY3MjIwNzIsImlhdCI6MTY0NjExNzI3MH0.KlOE4NfT_U-TI64EoLA_5OJn6aM-3rSH-MS-gNHOBZE"},
 			"Content-Type":  []string{"application/json"},
 		},
 	}
@@ -34,18 +34,22 @@ func main() {
 	//	log.Println(err)
 	//}
 
-	//fmt.Println(meetings)
-	chats, err := zoom.GetChat("8722824397")
-	if err != nil {
-		log.Println(err)
-	}
-	fmt.Println(chats)
-	//for _, chats := range chats.Chats {
-	//fmt.Println(chats.UserID, chats.UserName, chats.Email)
-	//}
+	//fmt.Println(meetings.UUID)
 	meeting, err := zoom.GetClientFeedback("8722824397")
 	if err != nil {
 		log.Println(err)
 	}
 	fmt.Println(meeting)
+	//chat, err := zoom.GetChat()
+	//if err != nil {
+	//	log.Println(err)
+	//}
+
+	//fmt.Println(chat)
+	postmeetings, err := zoom.GetMeeting("8722824397")
+	if err != nil {
+		log.Println(err)
+	}
+
+	fmt.Println(postmeetings)
 }
