@@ -17,7 +17,7 @@ type Response_meeting struct {
 	} `json:"participants"`
 }
 
-// Get Specific meeting details
+// Get Specific postmeeting details
 func (z *Zoom) GetPostMeeting(meeting_id string) (Response_meeting, error) {
 	// Create the url for getting meetings
 	endpoint := fmt.Sprintf("/metrics/meetings/%v/participants/satisfaction", meeting_id)

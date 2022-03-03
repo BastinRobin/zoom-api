@@ -20,36 +20,34 @@ func main() {
 	}
 
 	// Start calling the methods
-	// users, err := zoom.GetUsers()
-	// if err != nil {
-	// 	log.Println(err)
-	// }
-
-	// for _, user := range users.Users {
-	// 	fmt.Println(user.FirstName, user.LastName, user.PMI)
-	// }
-
-	//meetings, err := zoom.GetMeeting("8722824397")
-	//if err != nil {
-	//	log.Println(err)
-	//}
-
-	//fmt.Println(meetings.UUID)
-	meeting, err := zoom.GetClientFeedback("8722824397")
+	//method for GetUser
+	users, err := zoom.GetUsers()
 	if err != nil {
 		log.Println(err)
 	}
-	fmt.Println(meeting)
-	//chat, err := zoom.GetChat()
-	//if err != nil {
-	//	log.Println(err)
-	//}
-
-	//fmt.Println(chat)
-	postmeetings, err := zoom.GetMeeting("8722824397")
+	fmt.Println(users)
+	//method for GetmMeting
+	meetings, err := zoom.GetMeeting("8722824397")
 	if err != nil {
 		log.Println(err)
 	}
-
-	fmt.Println(postmeetings)
+	fmt.Println(meetings.UUID)
+	//method for GetChat
+	chat, err := zoom.GetChat()
+	if err != nil {
+		log.Println(err)
+	}
+	fmt.Println(chat)
+	//method for GetRoomsWithIssues
+	rooms, err := zoom.GetRoomsWithIssues("8722824397")
+	if err != nil {
+		log.Println(err)
+	}
+	fmt.Println(rooms)
+	//method for GetMeetingPartcipants
+	Partcipant, err := zoom.GetMeetingPartcipants("8722824397", "8722824397")
+	if err != nil {
+		log.Println(err)
+	}
+	fmt.Println(Partcipant)
 }

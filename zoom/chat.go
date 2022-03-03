@@ -31,6 +31,7 @@ type Chat struct {
 // Return the list of all chats in zoom account
 func (z *Zoom) GetChat() (Response, error) {
 	chats, err := z.Request("/metrics/chat", "GET")
+
 	if err != nil {
 		log.Println(err)
 		return Response{}, err

@@ -47,9 +47,4 @@ func TestGetChat(t *testing.T) {
 	}
 
 	assert.NotNil(t, chat, "results are empty")
-	assert.NotNil(t, chat.PageSize, "No PageSize presents")
-	//assert.Equal(t, len(chats.Users), 1, "Total no of users not matching")
-	//assert.Equal(t, chats.Users[0].FirstName, "Taylor", "Names are not matching")
-	//assert.Equal(t, chats.Users[0].PMI, int64(111111111), "PMI are not matching")
-
 }
