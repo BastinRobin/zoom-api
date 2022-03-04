@@ -8,7 +8,7 @@ import (
 	"github.com/stretchr/testify/assert"
 )
 
-func TestGetPostMeeting(t *testing.T) {
+func TestGetPostMeetingFeedback(t *testing.T) {
 
 	testServer := httptest.NewServer(http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
 		w.WriteHeader(http.StatusOK)
@@ -30,7 +30,7 @@ func TestGetPostMeeting(t *testing.T) {
 		BaseUrl: testServer.URL,
 	}
 
-	postmeetings, err := client.GetPostMeeting("8722824397")
+	postmeetings, err := client.GetPostMeetingFeedback("8722824397")
 	if err != nil {
 		t.Error(err)
 	}

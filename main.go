@@ -26,7 +26,7 @@ func main() {
 		log.Println(err)
 	}
 	fmt.Println(users)
-	//method for GetmMeting
+	//method for GetMeeting
 	meetings, err := zoom.GetMeeting("8722824397")
 	if err != nil {
 		log.Println(err)
@@ -50,4 +50,16 @@ func main() {
 		log.Println(err)
 	}
 	fmt.Println(Partcipant)
+	//methof for GetPostMeetingFeedback
+	postmeeting, err := zoom.GetPostMeetingFeedback("8722824397")
+	if err != nil {
+		log.Println(err)
+	}
+	fmt.Println(postmeeting)
+	//method for Get25IssuesOfZoomRoom
+	roomissues, err := zoom.Get25IssuesOfZoomRooms()
+	if err != nil {
+		log.Println(err)
+	}
+	fmt.Println(roomissues)
 }

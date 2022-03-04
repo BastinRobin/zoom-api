@@ -7,18 +7,19 @@ import (
 )
 
 type Response_meeting struct {
-	NextPageToken string `json:"next_page_token"`
+	NextPageToken string `json:"next_page_size"`
 	PageSize      int    `json:"page_size"`
-	Participants  []struct {
-		//	DateTime time.Time `json:"date_time"`
-		Email   string `json:"email"`
-		Quality string `json:"quality"`
-		UserID  string `json:"user_id"`
-	} `json:"participants"`
+	Partcipantss  Partcipantss
+}
+type Partcipantss []Partcipant
+type Partcipant struct {
+	Email   string `json:"email"`
+	Quality string `json:"quality"`
+	UserID  string `json:"user_id"`
 }
 
 // Get Specific postmeeting details
-func (z *Zoom) GetPostMeeting(meeting_id string) (Response_meeting, error) {
+func (z *Zoom) GetPostMeetingFeedback(meeting_id string) (Response_meeting, error) {
 	// Create the url for getting meetings
 	endpoint := fmt.Sprintf("/metrics/meetings/%v/participants/satisfaction", meeting_id)
 	response, err := z.Request(endpoint, "GET")
