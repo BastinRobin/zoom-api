@@ -5,7 +5,7 @@ import (
 	"log"
 )
 
-type Response_roomsissue struct {
+type Top25_zoom_roomsissues struct {
 	From string `json:"from"`
 	//To string `json:"to"`
 	TotalRecords int `json:"total_records"`
@@ -17,23 +17,23 @@ type RoomsIssue struct {
 	ZoomRoomsCount int    `json:"zoom_rooms_count"`
 }
 
-// Return the list of all issues in zoom Room
-func (z *Zoom) Get25IssuesOfZoomRooms() (Response_roomsissue, error) {
+// Return the list of 25 issues in zoom Room
+func (z *Zoom) Get25IssuesOfZoomRooms() (Top25_zoom_roomsissues, error) {
 	roomissue, err := z.Request("/metrics/zoomrooms/issues", "GET")
 	if err != nil {
 		log.Println(err)
-		return Response_roomsissue{}, err
+		return Top25_zoom_roomsissues{}, err
 	}
 
-	var response Response_roomsissue
+	var issues Top25_zoom_roomsissues
 
-	// Unmarshal the response into Response struct
-	err = json.Unmarshal(roomissue, &response)
+	// Unmarshal the response into Top25_zoom_roomsissues struct
+	err = json.Unmarshal(roomissue, &issues)
 	if err != nil {
 		log.Println(err)
-		return Response_roomsissue{}, err
+		return Top25_zoom_roomsissues{}, err
 	}
-
-	return response, nil
+	//return Top25_zoom_roomsissue structure
+	return issues, nil
 
 }

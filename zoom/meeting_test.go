@@ -40,8 +40,4 @@ func TestGetClientFeedback(t *testing.T) {
 	}
 
 	assert.NotNil(t, response, "results are empty")
-	//assert.NotNil(t, response.TotalRecords, "No records presents")
-	//assert.Equal(t, len(chats.Users), 1, "Total no of users not matching")
-	//assert.Equal(t, chats.Users[0].FirstName, "Taylor", "Names are not matching")
-	//assert.Equal(t, chats.Users[0].PMI, int64(111111111), "PMI are not matching")
 }
