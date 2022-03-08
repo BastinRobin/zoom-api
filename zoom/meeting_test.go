@@ -34,7 +34,7 @@ func TestGetClientFeedback(t *testing.T) {
 		BaseUrl: testServer.URL,
 	}
 
-	response, err := zoom.GetChat()
+	response, err := zoom.GetMeeting("")
 	if err != nil {
 		t.Error(err)
 	}

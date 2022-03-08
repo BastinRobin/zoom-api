@@ -55,24 +55,38 @@ func main() {
 	// }
 	// fmt.Println(room)
 
-	//Method for GetMeetingPartcipants
-	Partcipant, err := zoom.GetMeetingPartcipants("8722824397", "8722824397")
-	if err != nil {
-		log.Println(err)
-	}
-	fmt.Println(Partcipant)
+	// //Method for GetMeetingPartcipants
+	// Partcipant, err := zoom.GetMeetingPartcipants("8722824397", "8722824397")
+	// if err != nil {
+	// 	log.Println(err)
+	// }
+	// fmt.Println(Partcipant)
 
-	//Method for GetMeetingDetails
-	webinar, err := zoom.GetWebinarDetails()
-	if err != nil {
-		log.Println(err)
-	}
-	fmt.Println(webinar)
+	// //Method for GetWebinarDetails
+	// webinar, err := zoom.GetWebinarDetails()
+	// if err != nil {
+	// 	log.Println(err)
+	// }
+	// fmt.Println(webinar)
 
-	webinar_partcipant, err := zoom.GetWebinarPartcipants("8722824397")
+	// //Method for GetWebinarPartcipants
+	// webinar_partcipant, err := zoom.GetWebinarPartcipants("8722824397")
+	// if err != nil {
+	// 	log.Println(err)
+	// }
+	// fmt.Println(webinar_partcipant)
+
+	//Method for GetSIPDevices
+	SIP_devices, err := zoom.GetSIPDevice()
 	if err != nil {
 		log.Println(err)
 	}
-	fmt.Println(webinar_partcipant)
+	fmt.Println(SIP_devices)
+
+	SIP_device, err := zoom.CreateSIPDevice()
+	if err != nil {
+		log.Println(err)
+	}
+	fmt.Println(SIP_device)
 
 }
