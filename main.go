@@ -77,16 +77,23 @@ func main() {
 	// fmt.Println(webinar_partcipant)
 
 	//Method for GetSIPDevices
-	SIP_devices, err := zoom.GetSIPDevice()
+	// SIP_devices, err := zoom.GetSIPDevice()
+	// if err != nil {
+	// 	log.Println(err)
+	// }
+	// fmt.Println(SIP_devices)
+
+	//Method for GetListGroups
+	list_groups, err := zoom.GetListGroups()
 	if err != nil {
 		log.Println(err)
 	}
-	fmt.Println(SIP_devices)
+	fmt.Println(list_groups)
 
-	SIP_device, err := zoom.CreateSIPDevice()
+	//Method for GetLockedSetting
+	Group_Locked_Setting, err := zoom.GetLockedSetting("chfhfhhfh_TKikJIX0")
 	if err != nil {
 		log.Println(err)
 	}
-	fmt.Println(SIP_device)
-
+	fmt.Println(Group_Locked_Setting)
 }

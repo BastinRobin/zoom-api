@@ -29,12 +29,12 @@ func (z *Zoom) GetPostMeetingFeedback(meeting_id string) (PostMeetingFeedback, e
 	}
 
 	// Umarshal the response into PostMeetingFeedback struct
-	var postmeetings PostMeetingFeedback
-	err = json.Unmarshal(response, &postmeetings)
+	var postmeeting_feedback PostMeetingFeedback
+	err = json.Unmarshal(response, &postmeeting_feedback)
 	if err != nil {
 		log.Println(err)
 		return PostMeetingFeedback{}, err
 	}
 	//return PostMeetingFeedback structure
-	return postmeetings, nil
+	return postmeeting_feedback, nil
 }
