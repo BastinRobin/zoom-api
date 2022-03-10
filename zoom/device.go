@@ -50,22 +50,22 @@ func (z *Zoom) GetSIPDevice() (Zoom_Device, error) {
 
 }
 
-func (z *Zoom) CreateSIPDevice() (CreateSIPDevice, error) {
-	sipdevices, err := z.Request("/h323/devices", "POST")
-	if err != nil {
-		log.Println(err)
-		return CreateSIPDevice{}, err
-	}
+// func (z *Zoom) CreateSIPDevice() (CreateSIPDevice, error) {
+// 	sipdevices, err := z.Request("/h323/devices", "POST")
+// 	if err != nil {
+// 		log.Println(err)
+// 		return CreateSIPDevice{}, err
+// 	}
 
-	var devices CreateSIPDevice
+// 	var devices CreateSIPDevice
 
-	// Unmarshal the response into Zoom_Device struct
-	err = json.Unmarshal(sipdevices, &devices)
-	if err != nil {
-		log.Println(err)
-		return CreateSIPDevice{}, err
-	}
-	//return device structure
-	return devices, nil
+// 	// Unmarshal the response into Zoom_Device struct
+// 	err = json.Unmarshal(sipdevices, &devices)
+// 	if err != nil {
+// 		log.Println(err)
+// 		return CreateSIPDevice{}, err
+// 	}
+// 	//return device structure
+// 	return devices, nil
 
-}
+// }

@@ -88,6 +88,7 @@ func main() {
 	if err != nil {
 		log.Println(err)
 	}
+
 	fmt.Println(list_groups)
 
 	//Method for GetLockedSetting
@@ -96,4 +97,18 @@ func main() {
 		log.Println(err)
 	}
 	fmt.Println(Group_Locked_Setting)
+
+	//Method for GetGroupMembers
+	group_members, err := zoom.GetListGroupMembers("3542342")
+	if err != nil {
+		log.Println(err)
+	}
+	fmt.Println(group_members)
+
+	//Method for GetGroupSettings
+	group_setting, err := zoom.GetGroupSetting("chfhfhhfh_TKikJIX0")
+	if err != nil {
+		log.Println(err)
+	}
+	fmt.Println(group_setting)
 }
