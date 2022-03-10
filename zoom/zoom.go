@@ -21,6 +21,7 @@ func (z *Zoom) Request(url string, method string) ([]byte, error) {
 
 	// Form the complete url for the struct
 	endpoint := fmt.Sprintf("%v%v", z.BaseUrl, url)
+	fmt.Println(endpoint)
 	// Create a request object
 	req, err := http.NewRequest(method, endpoint, nil)
 	if err != nil {
