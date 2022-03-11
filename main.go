@@ -99,11 +99,11 @@ func main() {
 	fmt.Println(Group_Locked_Setting)
 
 	//Method for GetGroupMembers
-	group_members, err := zoom.GetListGroupMembers("3542342")
-	if err != nil {
-		log.Println(err)
-	}
-	fmt.Println(group_members)
+	// group_members, err := zoom.GetListGroupMembers("3542342")
+	// if err != nil {
+	// 	log.Println(err)
+	// }
+	// fmt.Println(group_members)
 
 	//Method for GetGroupSettings
 	group_setting, err := zoom.GetGroupSetting("chfhfhhfh_TKikJIX0")
@@ -111,4 +111,21 @@ func main() {
 		log.Println(err)
 	}
 	fmt.Println(group_setting)
+	im_groups, err := zoom.GetIMDirectoryGroup("3542342")
+	if err != nil {
+		log.Println(err)
+	}
+	fmt.Println(im_groups)
+
+	meeting_polls, err := zoom.GetMeetingPolls("8722824397")
+	if err != nil {
+		log.Println(err)
+	}
+	fmt.Println(meeting_polls)
+
+	meeting_registrants, err := zoom.GetMeetingRegistrants("8722824397")
+	if err != nil {
+		log.Println(err)
+	}
+	fmt.Println(meeting_registrants)
 }
