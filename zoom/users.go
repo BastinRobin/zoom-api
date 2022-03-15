@@ -38,3 +38,8 @@ func (z *Zoom) GetUsers() (UserResponse, error) {
 	return response, nil
 
 }
+
+func Addition(a int, b int) (int, error) {
+
+	return a + b, nil
+}

@@ -8,7 +8,7 @@ import (
 	"github.com/stretchr/testify/assert"
 )
 
-func TestGetPostMeetingFeedback(t *testing.T) {
+func TestGetPostWebinarFeedback(t *testing.T) {
 
 	testServer := httptest.NewServer(http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
 		w.WriteHeader(http.StatusOK)
@@ -26,14 +26,15 @@ func TestGetPostMeetingFeedback(t *testing.T) {
 		  }`))
 	}))
 
-	client := &Zoom{
+	zoom := &Zoom{
 		BaseUrl: testServer.URL,
 	}
 
-	postmeetings, err := client.GetPostMeetingFeedback("8722824397")
+	response, err := zoom.GetPostWebinarFeedback("8722824397")
 	if err != nil {
 		t.Error(err)
 	}
 
-	assert.NotNil(t, postmeetings, "Empty meetings returned")
+	assert.NotNil(t, response, "results are empty")
+	assert.NotNil(t, response.PageSize, 1, "No pagesize presents")
 }
