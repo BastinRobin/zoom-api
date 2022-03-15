@@ -105,17 +105,17 @@ func main() {
 	// }
 	// fmt.Println(group_members)
 
-	//Method for GetGroupSettings
-	group_setting, err := zoom.GetGroupSetting("chfhfhhfh_TKikJIX0")
-	if err != nil {
-		log.Println(err)
-	}
-	fmt.Println(group_setting)
-	im_groups, err := zoom.GetIMDirectoryGroup("3542342")
-	if err != nil {
-		log.Println(err)
-	}
-	fmt.Println(im_groups)
+	// //Method for GetGroupSettings
+	// group_setting, err := zoom.GetGroupSetting("chfhfhhfh_TKikJIX0")
+	// if err != nil {
+	// 	log.Println(err)
+	// }
+	// fmt.Println(group_setting)
+	// im_groups, err := zoom.GetIMDirectoryGroup("3542342")
+	// if err != nil {
+	// 	log.Println(err)
+	// }
+	// fmt.Println(im_groups)
 
 	meeting_polls, err := zoom.GetMeetingPolls("8722824397")
 	if err != nil {
@@ -128,4 +128,16 @@ func main() {
 		log.Println(err)
 	}
 	fmt.Println(meeting_registrants)
+
+	AudioItem, err := zoom.GetAudioItem("DP-6B4CeTjyo-FYfsFXdXQ")
+	if err != nil {
+		log.Println(err)
+	}
+	fmt.Println(AudioItem)
+
+	list_audio_item, err := zoom.GetListAudioItem("K3xnsN2kSpSODzIRmDj0Rg")
+	if err != nil {
+		log.Println(err)
+	}
+	fmt.Println(list_audio_item)
 }

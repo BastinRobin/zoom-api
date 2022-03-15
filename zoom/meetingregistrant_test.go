@@ -66,5 +66,4 @@ func TestGetMeetingRegistrant(t *testing.T) {
 	assert.NotNil(t, meetings_registrant, "Empty meetings returned")
 	assert.Equal(t, meetings_registrant.TotalRecords, 1, "No records presents")
 	assert.Equal(t, meetings_registrant.PageCount, 1, "Total count are not matching")
-
 }
