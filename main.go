@@ -84,19 +84,19 @@ func main() {
 	// fmt.Println(SIP_devices)
 
 	//Method for GetListGroups
-	list_groups, err := zoom.GetListGroups()
-	if err != nil {
-		log.Println(err)
-	}
+	// list_groups, err := zoom.GetListGroups()
+	// if err != nil {
+	// 	log.Println(err)
+	// }
 
-	fmt.Println(list_groups)
+	// fmt.Println(list_groups)
 
-	//Method for GetLockedSetting
-	Group_Locked_Setting, err := zoom.GetLockedSetting("chfhfhhfh_TKikJIX0")
-	if err != nil {
-		log.Println(err)
-	}
-	fmt.Println(Group_Locked_Setting)
+	// //Method for GetLockedSetting
+	// Group_Locked_Setting, err := zoom.GetLockedSetting("chfhfhhfh_TKikJIX0")
+	// if err != nil {
+	// 	log.Println(err)
+	// }
+	// fmt.Println(Group_Locked_Setting)
 
 	//Method for GetGroupMembers
 	// group_members, err := zoom.GetListGroupMembers("3542342")
@@ -117,27 +117,41 @@ func main() {
 	// }
 	// fmt.Println(im_groups)
 
-	meeting_polls, err := zoom.GetMeetingPolls("8722824397")
-	if err != nil {
-		log.Println(err)
-	}
-	fmt.Println(meeting_polls)
+	// meeting_polls, err := zoom.GetMeetingPolls("8722824397")
+	// if err != nil {
+	// 	log.Println(err)
+	// }
+	// fmt.Println(meeting_polls)
 
-	meeting_registrants, err := zoom.GetMeetingRegistrants("8722824397")
-	if err != nil {
-		log.Println(err)
-	}
-	fmt.Println(meeting_registrants)
+	// meeting_registrants, err := zoom.GetMeetingRegistrants("8722824397")
+	// if err != nil {
+	// 	log.Println(err)
+	// }
+	// fmt.Println(meeting_registrants)
+	//Method for GetAudioItem
+	// AudioItem, err := zoom.GetAudioItem("DP-6B4CeTjyo-FYfsFXdXQ")
+	// if err != nil {
+	// 	log.Println(err)
+	// }
+	// fmt.Println(AudioItem)
+	// //Method for ListAudioItem
+	// list_audio_item, err := zoom.GetListAudioItem("K3xnsN2kSpSODzIRmDj0Rg")
+	// if err != nil {
+	// 	log.Println(err)
+	// }
+	// fmt.Println(list_audio_item)
 
-	AudioItem, err := zoom.GetAudioItem("DP-6B4CeTjyo-FYfsFXdXQ")
+	//Method for ListBlockedList
+	blocked_list, err := zoom.ListBlockedList()
 	if err != nil {
 		log.Println(err)
 	}
-	fmt.Println(AudioItem)
+	fmt.Println(blocked_list)
 
-	list_audio_item, err := zoom.GetListAudioItem("K3xnsN2kSpSODzIRmDj0Rg")
+	//Method for List AutoReceptionists
+	auto_receptionists, err := zoom.ListAutoReceptionists()
 	if err != nil {
 		log.Println(err)
 	}
-	fmt.Println(list_audio_item)
+	fmt.Println(auto_receptionists)
 }
