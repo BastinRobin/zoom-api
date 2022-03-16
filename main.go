@@ -123,4 +123,15 @@ func main() {
 	}
 	fmt.Println(blockedlist)
 
+	blockedlistdetails, err := zoom.GetBlockedListDetails("7bR_Ix4KSJS_heuPPKc0Zw")
+	if err != nil {
+		log.Println(err)
+	}
+	fmt.Println(blockedlistdetails)
+
+	listPhonenumbers, err := zoom.GetListPhoneNumbers()
+	if err != nil {
+		log.Println(err)
+	}
+	fmt.Println(listPhonenumbers)
 }
