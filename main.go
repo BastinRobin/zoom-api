@@ -142,16 +142,30 @@ func main() {
 	// fmt.Println(list_audio_item)
 
 	//Method for ListBlockedList
-	blocked_list, err := zoom.ListBlockedList()
-	if err != nil {
-		log.Println(err)
-	}
-	fmt.Println(blocked_list)
+	// blocked_list, err := zoom.ListBlockedList()
+	// if err != nil {
+	// 	log.Println(err)
+	// }
+	// fmt.Println(blocked_list)
 
-	//Method for List AutoReceptionists
-	auto_receptionists, err := zoom.ListAutoReceptionists()
+	// //Method for List AutoReceptionists
+	// auto_receptionists, err := zoom.ListAutoReceptionists()
+	// if err != nil {
+	// 	log.Println(err)
+	// }
+	// fmt.Println(auto_receptionists)
+
+	//Method for ListCallingPlans
+	calling_plans, err := zoom.ListCallingPlans()
 	if err != nil {
 		log.Println(err)
 	}
-	fmt.Println(auto_receptionists)
+	fmt.Println(calling_plans)
+
+	//Method for ListPortedNumbers
+	ported_numbers, err := zoom.ListPortedNumbers()
+	if err != nil {
+		log.Println(err)
+	}
+	fmt.Println(ported_numbers)
 }
