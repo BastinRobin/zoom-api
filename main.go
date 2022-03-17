@@ -111,27 +111,39 @@ func main() {
 	// }
 	// fmt.Println(meeting_livestream)
 
-	listautoreceptionists, err := zoom.GetListAutoReceptionists()
-	if err != nil {
-		log.Println(err)
-	}
-	fmt.Println(listautoreceptionists)
+	// listautoreceptionists, err := zoom.GetListAutoReceptionists()
+	// if err != nil {
+	// 	log.Println(err)
+	// }
+	// fmt.Println(listautoreceptionists)
 
-	blockedlist, err := zoom.GetListBlockedLists()
-	if err != nil {
-		log.Println(err)
-	}
-	fmt.Println(blockedlist)
+	// blockedlist, err := zoom.GetListBlockedLists()
+	// if err != nil {
+	// 	log.Println(err)
+	// }
+	// fmt.Println(blockedlist)
 
-	blockedlistdetails, err := zoom.GetBlockedListDetails("7bR_Ix4KSJS_heuPPKc0Zw")
-	if err != nil {
-		log.Println(err)
-	}
-	fmt.Println(blockedlistdetails)
+	// blockedlistdetails, err := zoom.GetBlockedListDetails("7bR_Ix4KSJS_heuPPKc0Zw")
+	// if err != nil {
+	// 	log.Println(err)
+	// }
+	// fmt.Println(blockedlistdetails)
 
-	listPhonenumbers, err := zoom.GetListPhoneNumbers()
+	// listPhonenumbers, err := zoom.GetListPhoneNumbers()
+	// if err != nil {
+	// 	log.Println(err)
+	// }
+	// fmt.Println(listPhonenumbers)
+
+	listmonitoringroups, err := zoom.GetListMonitoringGroups()
 	if err != nil {
 		log.Println(err)
 	}
-	fmt.Println(listPhonenumbers)
+	fmt.Println(listmonitoringroups)
+
+	monitoringroupsid, err := zoom.GetMonitoringGroupId("8f71O6rWT8KFUGQmJIFAdQ")
+	if err != nil {
+		log.Println(err)
+	}
+	fmt.Println(monitoringroupsid)
 }
