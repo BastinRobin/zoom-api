@@ -56,5 +56,4 @@ func TestGetUser(t *testing.T) {
 	assert.Equal(t, len(users.Users), 1, "Total no of users not matching")
 	assert.Equal(t, users.Users[0].FirstName, "Taylor", "Names are not matching")
 	assert.Equal(t, users.Users[0].PMI, int64(111111111), "PMI are not matching")
-
 }

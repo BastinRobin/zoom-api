@@ -156,16 +156,30 @@ func main() {
 	// fmt.Println(auto_receptionists)
 
 	//Method for ListCallingPlans
-	calling_plans, err := zoom.ListCallingPlans()
-	if err != nil {
-		log.Println(err)
-	}
-	fmt.Println(calling_plans)
+	// calling_plans, err := zoom.ListCallingPlans()
+	// if err != nil {
+	// 	log.Println(err)
+	// }
+	// fmt.Println(calling_plans)
 
-	//Method for ListPortedNumbers
-	ported_numbers, err := zoom.ListPortedNumbers()
+	// //Method for ListPortedNumbers
+	// ported_numbers, err := zoom.ListPortedNumbers()
+	// if err != nil {
+	// 	log.Println(err)
+	// }
+	// fmt.Println(ported_numbers)
+
+	//Methof for ListPhoneNumber
+	phone_numbers, err := zoom.ListPhoneNumber()
 	if err != nil {
 		log.Println(err)
 	}
-	fmt.Println(ported_numbers)
+	fmt.Println(phone_numbers)
+
+	//Methof for GetPhoneNumberDetails
+	phonenumbers_details, err := zoom.GetPhoneNumberDetails("Hfdgdfgdfg1ew")
+	if err != nil {
+		log.Println(err)
+	}
+	fmt.Println(phonenumbers_details)
 }
