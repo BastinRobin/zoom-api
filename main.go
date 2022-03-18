@@ -135,15 +135,27 @@ func main() {
 	// }
 	// fmt.Println(listPhonenumbers)
 
-	listmonitoringroups, err := zoom.GetListMonitoringGroups()
-	if err != nil {
-		log.Println(err)
-	}
-	fmt.Println(listmonitoringroups)
+	// listmonitoringroups, err := zoom.GetListMonitoringGroups()
+	// if err != nil {
+	// 	log.Println(err)
+	// }
+	// fmt.Println(listmonitoringroups)
 
-	monitoringroupsid, err := zoom.GetMonitoringGroupId("8f71O6rWT8KFUGQmJIFAdQ")
+	// monitoringroupsid, err := zoom.GetMonitoringGroupId("8f71O6rWT8KFUGQmJIFAdQ")
+	// if err != nil {
+	// 	log.Println(err)
+	// }
+	// fmt.Println(monitoringroupsid)
+
+	peeringphonenumber, err := zoom.ListPeeringPhoneNumber()
 	if err != nil {
 		log.Println(err)
 	}
-	fmt.Println(monitoringroupsid)
+	fmt.Println(peeringphonenumber)
+
+	emergencyaddresses, err := zoom.ListEmergencyAddresses()
+	if err != nil {
+		log.Println(err)
+	}
+	fmt.Println(emergencyaddresses)
 }
