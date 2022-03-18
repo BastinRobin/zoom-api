@@ -8,7 +8,7 @@ import (
 	"github.com/stretchr/testify/assert"
 )
 
-func TestGetLockedSetting(t *testing.T) {
+func TestGetGroup(t *testing.T) {
 
 	testServer := httptest.NewServer(http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
 		w.WriteHeader(http.StatusOK)
@@ -19,16 +19,17 @@ func TestGetLockedSetting(t *testing.T) {
 		  }`))
 	}))
 
-	client := &Zoom{
+	zoom := &Zoom{
 		BaseUrl: testServer.URL,
 	}
 
-	group_locked_setting, err := client.GetLockedSetting("chfhfhhfh_TKikJIX0")
+	group, err := zoom.GetGroup("chfhfhhfh_TKikJIX0")
 	if err != nil {
 		t.Error(err)
 	}
 
-	assert.NotNil(t, group_locked_setting, "Empty meetings returned")
-	assert.Equal(t, group_locked_setting.TotalMembers, 0, "TotalMembers is not matching")
-	assert.Equal(t, group_locked_setting.Name, "My test group", "Names are not matching")
+	assert.NotNil(t, group, "results are empty")
+	assert.Equal(t, group.TotalMembers, 0, "TotalMembers is not matching")
+	assert.Equal(t, len(group.ID), 18, " group  id is not matching")
+
 }
